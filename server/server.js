@@ -15,6 +15,11 @@ const io = new Server(server, {
   },
 });
 
+// Middleware template for socket.io
+io.use((socket, next) => {
+  next();
+});
+
 io.on("connection", (socket) => {
   console.log("User connected", socket.id);
 
